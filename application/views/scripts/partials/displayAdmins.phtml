@@ -1,0 +1,35 @@
+<section class="currentAdmins">
+    <h1>Current Administrators</h1>
+    <?php if($this->admins) { ?>
+        <table class="adminTable" id="administratorsTable">
+            <thead>
+            <tr>
+                <th width="310" align="left">UCMNETID</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <?php
+            $count=0;
+            foreach($this->admins as $admin){
+                if($count%2==1){
+                    $class="class='even'";
+                }
+                else{
+                    $class='';
+                }
+                ?>
+                <tr <?php echo $class?>>
+                    <td><?php echo $admin->getUcmnetID()?></td>
+                    <td align="center"><a href="#delete" class="DA" data-admin="<?php echo $admin->getAdminID()?>">[ Delete ]</a></td>
+                </tr>
+            <?php
+            $count++;
+            } ?>
+        </table>
+
+    <?php }
+    else{
+        echo "No Admins";
+    }
+    ?>
+</section>

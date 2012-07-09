@@ -1,0 +1,89 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+    <?php echo $this->headLink(); ?>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="http://ajax.microsoft.com/ajax/jquery.ui/1.8.10/themes/smoothness/jquery-ui.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+    <script src="/js/libs/modernizr-2.5.3.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
+
+</head>
+<body class='<?php echo $this->bodyClass?>'>
+    <div id="container">
+        <header>
+
+            <a href="/" id="homeLink"><img src="/images/logo.png" alt="UC Merced" /></a>
+            <span>Template</span>
+            <nav>
+                <?php echo $this->navigation()->menu()->renderMenu($this->nav)?>
+            </nav>
+        </header>
+        <div id="main" role="main">
+            <nav id="smallNav">
+                <ul>
+                    <?php echo $this->loginMenu();?>
+                </ul>
+            </nav>
+
+            <article>
+                <div id="msgContainer">
+                    <?php
+                        echo $this->getMessages();
+                    ?>
+                </div>
+
+                <?php echo $this->layout()->content; ?>
+            </article>
+
+        </div>
+        <footer>
+            <div class="left">
+                <span>Resources</span>
+                <ul>
+                    <li><a href="http://www.ucmerced.edu/site-list">Site List</a></li>
+                    <li><a href="http://directory.ucmerced.edu" target="_blank">Directory</a></li>
+                    <li><a href="http://www.ucmerced.edu/directions-map">Directions &amp; Map</a></li>
+                    <li><a href="http://www.ucmerced.edu/about-uc-merced">About UC Merced</a></li>
+                    <li><a href="mailto:communications@ucmerced.edu?subject=Link Shortener">Site Contact</a></li>
+                </ul>
+
+            </div>
+
+            <div class="right">
+                <img src="/images/ftrLogo.gif" alt="UC Merced" /><br />
+                The first new American research university of the 21<sup>st</sup> century, with a mission of research, teaching, and service
+            </div>
+            <div class="ftr">
+                <p class="pLeft"><strong>University of California</strong>, Merced 5200 Lake Rd, Merced, CA 95344 T:(209) 228-4400</p>
+                <p class="pRight">&COPY; 2012 UC Regents | <a href="http://www.ucmerced.edu/privacy-statement" target="_blank">Privacy/Legal Notice</a>
+            </div>
+        </footer>
+    </div> <!-- eo #container -->
+
+    <script src="/js/script.js"></script>
+
+  <script>
+    /*
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+    */
+  </script>
+</body>
+</html>

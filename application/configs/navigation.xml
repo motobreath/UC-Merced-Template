@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<nav>
+             <page1>
+                <label>Link 1</label>
+                <class></class>
+                <uri>#</uri>
+            </page1>
+            <page2>
+                <label>Link 2</label>
+                <uri>#</uri>
+            </page2>
+            <page4>
+                <label>Link 3</label>
+                <uri>#</uri>
+            </page4>
+	</nav>
+
+        <adminNav>
+            <page1>
+                <label>Manage Admins</label>
+                <class></class>
+                <uri>/admin/users</uri>
+            </page1>
+        </adminNav>
+</config>

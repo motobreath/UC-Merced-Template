@@ -1,0 +1,13 @@
+<aside class="admin">
+    <nav>
+        <?php echo $this->navigation()->menu()->renderMenu(Zend_Registry::get("adminNav"))?>
+    </nav>
+</aside>
+<h1>Administration</h1>
+
+<div class="content">
+    <p>Here is where you would do your admin things, and have your admin content. For the template, the only page included here is the add/remove admins functionality.</p>
+    <h2>Sample Form</h2>
+    <p>Sample form to demonstrate form styles</p>
+    <?php echo $this->sampleForm?>
+</div>

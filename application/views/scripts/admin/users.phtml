@@ -1,0 +1,9 @@
+<aside class="admin">
+    <nav>
+        <?php echo $this->navigation()->menu()->renderMenu(Zend_Registry::get("adminNav"))?>
+    </nav>
+</aside>
+<h1>Add Administrators</h1>
+
+<?php echo $this->form?>
+<?php echo $this->displayAdmins();?>
