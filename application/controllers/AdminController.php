@@ -21,9 +21,10 @@ class AdminController extends Zend_Controller_Action
         $isAdmin=$appUser->getIsAdmin();
         if(!$isAdmin){
             $this->getFlashMessenger()->setNamespace("UCStatusError")->addMessage("Access Denied");
-            //$redirector=new Zend_Controller_Action_Helper_Redirector();
             $this->getHelper("redirector")->gotoSimpleAndExit("index","index");
         }
+
+        $this->_helper->_layout->setLayout('layout3');
 
     }
 

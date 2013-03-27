@@ -153,6 +153,49 @@ header nav{
     font-family: 'Droid Sans', sans-serif;
 }
 
+header #hdrSearch{
+    position:absolute;
+    top:10px;
+    right:10px;
+}
+
+header input.txt{
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px 3px 3px 3px;
+    background-color:#fff;
+    color: #404040;
+    display: inline-block;
+    font-size: 14px;
+    height: 21px;
+    line-height: 21px;
+    padding: 4px;
+    width:186px;
+}
+
+header input.submit{
+    background: url("/images/search.png") no-repeat scroll 5px 3px transparent;
+    border: 0 none;
+    border-radius: 0 0 0 0;
+    box-shadow: none;
+    font-size: 14px;
+    height: 20px;
+    opacity: 0.7;
+    padding: 0;
+    position: absolute;
+    right: 5px;
+    text-indent: -99999px;
+    top: 5px;
+    width: 20px;
+    z-index: 1;
+}
+
+header input.submit:hover{
+    opacity:.9;
+}
+
+
 nav ul, nav li{
     margin:0;
     padding:0;
@@ -170,7 +213,7 @@ header nav a{
 }
 
 #smallNav{
-    right:20px;
+    right:13px;
     left:auto;
     font-size:9pt;
     position:absolute;
@@ -189,30 +232,6 @@ header nav a{
     font-size:9pt;
     padding:0 6px;
 }
-aside.admin{
-    padding:0;
-    width:250px;
-    margin:10px 0;
-}
-aside.admin nav li{
-    width:250px;
-    border-bottom:1px solid #D8D9DA;
-}
-aside.admin nav li:last-child{
-    border:none;
-
-}
-aside.admin nav a{
-    width:234px;
-    padding:6px 8px;
-    display:block;
-}
-
-
-
-aside.admin nav a:hover{
-    background-color:#D8D9DA;
-}
 
 #main{
     padding:0 20px;
@@ -225,30 +244,10 @@ article{
     padding:10px 0;
 }
 
-section{
+article section{
     padding-bottom:15px;
     clear:both;
 }
-
-aside{
-    float:right;
-    border:1px solid #D8D9DA;
-    padding:10px 15px 10px 10px;
-    width:200px;
-    margin-left:20px;
-}
-
-aside .hdr{
-    font-size:12pt;
-    padding:15px 0 5px;
-    display:block;
-}
-
-aside .hdr:first-child{
-    padding-top:0;
-}
-
-
 
 footer{
     clear:both;
@@ -303,14 +302,6 @@ footer .pRight{
     float:right;
 }
 
-.mainContent{
-    width:706px;
-}
-
-.mainContent.full{
-    width:100%;
-}
-
 #msgContainer{
     margin-top:25px;
 }
@@ -341,6 +332,146 @@ footer .pRight{
 .red{
     color:#ff0000;
 }
+
+.full{
+    width:100% !important;
+}
+
+table.stripeTable{
+    border:1px solid #bfbfbf;
+    width:444px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+table.stripeTable th, table.stripeTable td{
+    padding:5px;
+}
+
+table.stripeTable th{
+    background-color:#A2B3CE;
+}
+
+table.stripeTable .even{
+    background-color:#d9e0eb;
+}
+
+/*specific to layout 1*/
+#smallNav.top{
+    position:absolute;
+    top:50px;
+}
+
+/*Specific to layout 2*/
+article.withLeftNav{
+    clear:none;
+    float:left;
+    width:725px;
+    padding-left:20px;
+}
+
+nav.sideNav li{
+    float:none;
+    clear:both;
+    padding:5px 0;
+}
+
+nav.sideNav span{
+    color: #325E8D;
+    font-family: 'Droid Serif',serif;
+    font-size: 14pt;
+}
+
+nav.sideNav li{
+    border-bottom:1px solid #B0BDCE;
+}
+
+nav.sideNav ul li:last-child{
+    border:none;
+}
+
+nav.sideNav ul li ul{
+    padding-top:3px;
+}
+
+nav.sideNav ul li:first-child{
+    padding-top:0;
+}
+
+nav.sideNav ul li ul li{
+    padding-left:20px;
+    border:none;
+    color:#4E76A6;
+}
+
+nav.sideNav ul li ul li:before{
+    content: "\00BB";
+}
+
+#leftSide{
+    float:left;
+    width:200px;
+    border-right:1px solid #B0BDCE;
+    margin-top:20px;
+}
+
+#leftSide section.leftSideTop{
+
+}
+
+#leftSide section.leftSideBottom{
+    clear:both;
+    margin-top:20px;
+
+}
+/*End layout 2*/
+
+/*Specific to layout 3*/
+article.withRightNav{
+    float:left;
+    width:714px;
+    padding-right:20px;
+}
+
+#rightSide{
+    float:left;
+    width:200px;
+    margin-top:20px;
+}
+
+#rightSide .rightSideBottom{
+    border:1px solid #B0BDCE;
+    padding:10px;
+    margin-bottom:20px;
+}
+
+nav.admin{
+    padding:0;
+    width:198px;
+    margin:10px 0;
+    border:1px solid #B0BDCE;
+}
+nav.admin li{
+    border-bottom:1px solid #B0BDCE;
+    float:none;
+
+}
+nav.admin li:last-child{
+    border:none;
+
+}
+nav.admin a{
+    padding:6px 8px;
+    display:block;
+}
+
+nav.admin a:hover{
+    background-color:#B0BDCE;
+    color:#fff !important;
+}
+
+/*End layout 3 styles*/
 
 /*Form Styles*/
 input,label, select, textarea {
@@ -418,6 +549,7 @@ input.adminAdd{
 }
 
 /*end form styles*/
+
 #addAdmin{
     overflow:hidden;
 }
@@ -427,25 +559,7 @@ section.currentAdmins{
     overflow:hidden;
 }
 
-table.adminTable{
-    border:1px solid #bfbfbf;
-    width:444px;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-}
 
-table.adminTable th, table.adminTable td{
-    padding:5px;
-}
-
-table.adminTable th{
-    background-color:#A2B3CE;
-}
-
-table.adminTable .even{
-    background-color:#d9e0eb;
-}
 
 
 @media only screen and (min-width: 35em) {

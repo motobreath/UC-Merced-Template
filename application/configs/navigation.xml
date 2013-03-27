@@ -2,17 +2,17 @@
 <config>
 	<nav>
              <page1>
-                <label>Link 1</label>
+                <label>Home</label>
                 <class></class>
-                <uri>#</uri>
+                <uri>/</uri>
             </page1>
             <page2>
-                <label>Link 2</label>
-                <uri>#</uri>
+                <label>Layout 2</label>
+                <uri>/index/layout2</uri>
             </page2>
             <page4>
-                <label>Link 3</label>
-                <uri>#</uri>
+                <label>Layout 3</label>
+                <uri>/index/layout3</uri>
             </page4>
 	</nav>
 
@@ -22,5 +22,15 @@
                 <class></class>
                 <uri>/admin/users</uri>
             </page1>
+            <page2>
+                <label>Another Admin Link</label>
+                <class></class>
+                <uri>#</uri>
+            </page2>
+            <page3>
+                <label>Manage Something</label>
+                <class></class>
+                <uri>#</uri>
+            </page3>
         </adminNav>
 </config>

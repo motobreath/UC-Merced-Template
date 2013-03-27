@@ -26,33 +26,50 @@
     <script>window.jQuery.ui || document.write('<script src="js/libs/jquery-ui-1.8.23.min.js"><\/script>')</script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
 
-    <?php //DataTables?>
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
-
 </head>
 <body class='<?php echo $this->bodyClass?>'>
     <div id="container">
         <header>
+
             <a href="/" id="homeLink"><img src="/images/logo.png" alt="UC Merced" /></a>
             <span>Template</span>
-            <form id="hdrSearch">
-                <input type="text" class="txt" />
-                <input type="submit" class="submit" />
-            </form>
             <nav id="smallNav" class="top">
-                <ul>
-                    <?php echo $this->loginMenu();?>
-                </ul>
-            </nav>
-            <nav>
-                <?php echo $this->navigation()->menu()->renderMenu($this->nav)?>
+                <?php echo $this->loginMenu();?>
             </nav>
         </header>
         <div id="main" role="main">
-            <article class="widthRightNav">
-                <?php
-                    echo $this->getMessages();
-                ?>
+            <div id="leftSide">
+                <section id="side">
+                    <nav class="sideNav">
+                        <ul>
+                            <li>
+                                <span class="hdr"><a href="/index/layout2">Layout 2</a></span>
+                                <ul>
+                                    <li><a href="#">Test link 1</a></li>
+                                    <li><a href="#">Test link 1</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="hdr"><a href="/index/layout3">Layout 3</a></span>
+                                <ul>
+                                    <li><a href="#">Test link 1</a></li>
+                                    <li><a href="#">Test link 1</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </section>
+                <section id="bottomSide">
+                    <h4>Side Text</h4>
+                    <p>If you so choose, you may put content here. Might I suggest a picture?</p>
+
+                </section>
+            </div>
+            <article class="withLeftNav">
+                <?php //Get messages from flash messenger ?>
+                <?php echo $this->getMessages() ?>
+
+                <?php //content goes here ?>
                 <?php echo $this->layout()->content; ?>
             </article>
         </div>

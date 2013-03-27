@@ -30,6 +30,14 @@ class IndexController extends Zend_Controller_Action
         }
     }
 
+    public function layout2Action(){
+        $this->_helper->_layout->setLayout('layout2');
+    }
+
+    public function layout3Action(){
+        $this->_helper->_layout->setLayout('layout3');
+    }
+
     public function logoutAction()
     {
         phpCAS::client(SAML_VERSION_1_1,"cas.ucmerced.edu",443,"/cas",false);

@@ -26,35 +26,42 @@
     <script>window.jQuery.ui || document.write('<script src="js/libs/jquery-ui-1.8.23.min.js"><\/script>')</script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
 
-    <?php //DataTables?>
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
-
 </head>
 <body class='<?php echo $this->bodyClass?>'>
     <div id="container">
         <header>
+
             <a href="/" id="homeLink"><img src="/images/logo.png" alt="UC Merced" /></a>
             <span>Template</span>
-            <form id="hdrSearch">
-                <input type="text" class="txt" />
-                <input type="submit" class="submit" />
-            </form>
+            <nav>
+                <?php echo $this->navigation()->menu()->renderMenu($this->nav)?>
+            </nav>
             <nav id="smallNav" class="top">
                 <ul>
                     <?php echo $this->loginMenu();?>
                 </ul>
             </nav>
-            <nav>
-                <?php echo $this->navigation()->menu()->renderMenu($this->nav)?>
-            </nav>
         </header>
         <div id="main" role="main">
-            <article class="widthRightNav">
+            <article class="withRightNav">
                 <?php
                     echo $this->getMessages();
                 ?>
                 <?php echo $this->layout()->content; ?>
             </article>
+            <div id="rightSide">
+                <nav class="admin">
+                    <?php echo $this->navigation()->menu()->renderMenu(Zend_Registry::get("adminNav"))?>
+                </nav>
+                <section class="rightSideBottom">
+                    <h1>Side Content</h1>
+                    <p>Side content is optional, just like every other section. Check layout file.</p>
+                    <h2>Crazy filler content</h2>
+                    <p>
+                        Because this is a different section, we can use h1, h2, etc.<br />Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                </section>
+            </div>
         </div>
         <footer>
             <div class="left">
