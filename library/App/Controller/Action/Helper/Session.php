@@ -42,11 +42,7 @@ class App_Controller_Action_Helper_Session
                 $this->namespace=Zend_Registry::get("namespace");
             }
             else{
-                //if namespace not set in bootstrap, use generic namespace
-                //call helper to generate random char string
-                $rnd=new App_Controller_Action_Helper_RandomCharacterGenerator();
-                $this->namespace=$rnd->generateSequence();
-                Zend_Registry::set("namespace",$this->namespace);
+                throw new Exception("Please set namespace in bootstrap",500);
             }
         }
         return $this->namespace;

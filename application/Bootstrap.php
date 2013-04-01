@@ -21,9 +21,15 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
     protected function _initDB(){
         //MySQL -> default adapter
-        $config=new Zend_Config_Ini(APPLICATION_PATH . "/configs/db.ini",APPLICATION_ENV);
-        $db=Zend_Db::factory($config->database->adapter,$config->database);
-        Zend_Db_Table_Abstract::setDefaultAdapter($db);
+        try{
+            $config=new Zend_Config_Ini(APPLICATION_PATH . "/configs/db.ini",APPLICATION_ENV);
+            $db=Zend_Db::factory($config->database->adapter,$config->database);
+            Zend_Db_Table_Abstract::setDefaultAdapter($db);
+        }
+        catch(Exception $e){
+            $output="Database not available via bootstrap<br /> Original db config error message:" . $e;
+            throw new Exception($output,500);
+        }
     }
 
     protected function _initNavigation()
