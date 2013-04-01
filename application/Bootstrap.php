@@ -21,15 +21,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
     protected function _initDB(){
         //MySQL -> default adapter
-        try{
-            $config=new Zend_Config_Ini(APPLICATION_PATH . "/configs/db.ini",APPLICATION_ENV);
-            $db=Zend_Db::factory($config->database->adapter,$config->database);
-            Zend_Db_Table_Abstract::setDefaultAdapter($db);
-        }
-        catch(Exception $e){
-            $output="Database not available via bootstrap<br /> Original db config error message:" . $e;
-            throw new Exception($output,500);
-        }
+        $config=new Zend_Config_Ini(APPLICATION_PATH . "/configs/db.ini",APPLICATION_ENV);
+        $db=Zend_Db::factory($config->database->adapter,$config->database);
+        Zend_Db_Table_Abstract::setDefaultAdapter($db);
     }
 
     protected function _initNavigation()
@@ -54,6 +48,16 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         //not sure why here... but this works
         Zend_Registry::set("adminNav",$adminNavigation);
     }
+    
+    protected function _bootstrap($resource = null){
+        try{
+            parent::_bootstrap($resource);
+        }
+        catch( Exception $e ){
+            parent::_bootstrap( 'frontController' );
+            $front = $this->getResource( 'frontController' );
+            $front->registerPlugin( new Application_Plugin_BootstrapError($e) );           
+        }
+    }
 
 }
-
