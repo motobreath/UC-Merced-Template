@@ -48,7 +48,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         //not sure why here... but this works
         Zend_Registry::set("adminNav",$adminNavigation);
     }
-    
+
     protected function _bootstrap($resource = null){
         try{
             parent::_bootstrap($resource);
@@ -56,7 +56,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         catch( Exception $e ){
             parent::_bootstrap( 'frontController' );
             $front = $this->getResource( 'frontController' );
-            $front->registerPlugin( new Application_Plugin_BootstrapError($e) );           
+            $front->registerPlugin( new Application_Plugin_BootstrapError($e) );
         }
     }
 

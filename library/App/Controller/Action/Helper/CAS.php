@@ -55,8 +55,10 @@ class App_Controller_Action_Helper_CAS
                 }
             }
             catch(Exception $e){
-                var_dump($e);
-                die();
+                $msg=$this->getFlashMessenger();
+                $msg->setNamespace("UCStatusError")->addMessage("Cannot login. This message has been logged.");
+                $redirector = Zend_Controller_Action_HelperBroker::getStaticHelper('Redirector');
+                $redirector->gotoUrl('/');
             }
 
             try{

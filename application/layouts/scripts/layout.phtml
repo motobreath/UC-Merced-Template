@@ -12,8 +12,9 @@
     <meta name="viewport" content="width=device-width">
     <?php echo $this->headLink(); ?>
     <link rel="stylesheet" href="/css/style.css">
+    <!--
     <link href="http://ajax.microsoft.com/ajax/jquery.ui/1.8.10/themes/smoothness/jquery-ui.css" media="screen" rel="stylesheet" type="text/css" />
-
+-->
 
     <?php //Modernizr, makes html5 work!?>
     <script src="/js/libs/modernizr-2.5.3.min.js"></script>
@@ -50,9 +51,7 @@
         </header>
         <div id="main" role="main">
             <article class="widthRightNav">
-                <?php
-                    echo $this->getMessages();
-                ?>
+                <?php echo $this->getMessages(); ?>
                 <?php echo $this->layout()->content; ?>
             </article>
         </div>
